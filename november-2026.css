@@ -1,0 +1,148 @@
+:root{--cream:#faf4e8;--paper:#fffdf8;--ink:#2f2627;--berry:#642b3b;--gold:#a97836;--line:#e0d0ba}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:1.05rem/1.65 system-ui,sans-serif}
+.wrap{width:min(960px, calc(100% - 2rem));margin-inline:auto}
+header,footer{background:var(--berry);color:var(--paper);padding:2rem 0}
+header{text-align:center;border-bottom:5px solid var(--gold)}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.1;margin:.3em 0}
+h1{font-size:clamp(2.5rem,8vw,5.6rem)}
+h2{font-size:clamp(1.9rem,5vw,3rem)}
+h3{font-size:1.45rem;margin-top:1em}
+p{margin:.55em 0 1em}
+.label{font-size:.78rem;font-weight:750;letter-spacing:.14em;text-transform:uppercase}
+a{color:var(--berry);text-underline-offset:3px}
+header a,footer a{color:inherit}
+.button{display:inline-block;border:1px solid;padding:.4em 1em;border-radius:.25em}
+nav{display:flex;gap:.4em 1.1em;flex-wrap:wrap;padding:1rem 0;font-weight:650}
+section{padding:clamp(1rem,4vw,2.25rem);background:var(--paper);border:1px solid var(--line);margin:0 0 1.25rem;border-radius:.35rem}
+section .label{color:var(--berry)}
+.draft{border-left:3px solid var(--gold);padding:.45rem .8rem;background:#f6e7cd;font-size:.9em}
+figure{margin:1rem 0}
+figure img{width:100%;height:auto;display:block}
+.slot{display:grid;place-items:center;text-align:center;background:#efe3d4;min-height:8rem;padding:.8rem;border:1px dashed var(--gold)}
+.lead .slot{min-height:12rem}
+figcaption{font-size:.85rem;padding-top:.35rem}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+#halloween figure{max-width:25rem}
+@media(max-width:550px){.gallery{grid-template-columns:1fr 1fr}}
+@media print{
+ @page{size:letter;margin:.55in}
+ body{background:white;color:#171717;font:10.5pt/1.4 Georgia,serif}
+ .wrap{width:100%}
+ nav,.button{display:none}
+ header,footer{background:white;color:var(--berry);padding:.2in 0}
+ h1{font-size:34pt} h2{font-size:22pt} h3{font-size:15pt}
+ h2,h3,.label{break-after:avoid}
+ section{padding:.12in 0;border:0;border-top:1px solid var(--line);margin:0}
+ figure{break-inside:avoid}
+ figure img{max-height:2.6in;object-fit:contain;object-position:left center}
+ .gallery{break-inside:avoid}
+ a{color:inherit}
+}
+.vendor-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.75rem 1.25rem}
+.vendor-list>div{border-top:1px solid var(--line);break-inside:avoid}
+.vendor-list h3{font-size:1.2rem;margin:.7em 0 .3em}
+@media print{.vendor-list{grid-template-columns:1fr 1fr}}
+.vendor-signup{display:inline-block;background:var(--berry);color:var(--paper);padding:.4em .85em;border-radius:.25em;font-weight:650}
+.vendor-print-email{display:none}
+@media print{.vendor-signup{display:none}.vendor-print-email{display:inline}}
+.contact-art{display:block;width:min(100%,520px);height:auto;margin:0 0 1rem;border-radius:.25rem}
+@media print{
+ .contact-art{width:3.25in;margin-bottom:.1in}
+ footer .wrap{break-inside:avoid}
+}
+.masthead-logo{display:block;width:85px;height:85px;object-fit:contain;margin:0 auto .65rem}
+.masthead-logo-print{display:none}
+@media print{
+ .masthead-logo-web{display:none}
+ .masthead-logo-print{display:block;width:.65in;height:.65in}
+}
+@media screen{
+ header{padding:0}
+ .sponsor-band{background:#332832;border-bottom:1px solid #b68954}
+ .sponsor-inner{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.55rem 0}
+ .sponsor-inner .masthead-logo-web{width:54px;height:54px;margin:0;flex:none}
+ .sponsor-credit{text-align:left;font-size:.9rem;line-height:1.35}
+ .sponsor-credit .label{color:#f1cc95;font-size:.68rem}
+ .issue-band{padding:1.6rem 0 1.8rem}
+}
+.issue-band h1{text-transform:uppercase;font-size:clamp(1.75rem,5.6vw,4.35rem);letter-spacing:.015em}
+.association-wordmark{font:700 clamp(.95rem,2.5vw,1.5rem)/1.15 Georgia,serif;text-transform:uppercase;letter-spacing:.07em;margin:.75rem 0 1.1rem}
+.association-wordmark span{display:block;font:700 .56em/1.5 system-ui,sans-serif;letter-spacing:.25em;margin-top:.25rem}
+@media screen{
+ header{background:var(--paper);color:var(--ink);border-bottom:3px solid var(--berry)}
+ header .wrap{width:min(1060px,calc(100% - 2rem))}
+ .sponsor-band{background:var(--berry);color:var(--paper);border:0}
+ .sponsor-inner{gap:1rem;padding:1rem 0}
+ .sponsor-inner .masthead-logo-web{width:90px;height:90px}
+ .sponsor-credit strong{font:700 1.75rem/1.1 Georgia,serif}
+ .issue-band{display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;padding:1.45rem 0 1.2rem}
+ .issue-band h1,.association-wordmark span,.issue-meta{font:750 .73rem/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.22em}
+ .association-wordmark{font-size:clamp(1.6rem,3vw,2.35rem);letter-spacing:0;margin:.12em 0 0}
+ .issue-meta{text-align:right;letter-spacing:.12em}
+ .issue-meta p{margin:0 0 .55rem}
+ .issue-meta span{display:block;color:var(--berry);margin-top:.25rem}
+ .issue-meta .button{background:var(--berry);color:var(--paper);border:0;border-radius:2rem;text-decoration:none;padding:.65rem 1rem}
+ @media(max-width:600px){
+  .issue-band{align-items:flex-start;flex-direction:column}
+  .issue-meta{text-align:left}
+  .sponsor-inner .masthead-logo-web{width:62px;height:62px}
+  .sponsor-credit strong{font-size:1.3rem}
+ }
+}
+.listing-card{background:var(--cream);border:1px solid var(--line);border-radius:.35rem;padding:1rem;margin:1rem 0;max-width:40rem}
+.listing-card h3{margin:.3rem 0}
+.listing-card img{display:block;width:100%;height:auto;border-radius:.2rem;margin-bottom:.85rem}
+.market-source{font-size:.85rem}
+.market-stats,.footer-info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.market-stats>div{display:flex;flex-direction:column-reverse;background:var(--cream);padding:.75rem;border:1px solid var(--line);border-radius:.3rem}
+.market-stats dt{font-size:.85rem}
+.market-stats dd{margin:0;font:bold clamp(1.2rem,4vw,1.85rem)/1.2 Georgia,serif;color:var(--berry)}
+.outreach-list{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.35rem .8rem}
+.outreach-list dt{font-weight:700}
+.outreach-list dd{margin:0}
+footer section{background:transparent;border:0;padding:.85rem 0;margin:0}
+footer section .label{color:inherit}
+.footer-info{border-top:1px solid #c89baa;margin-top:1.2rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.contact-links a,.action-link{display:inline-flex;align-items:center;min-height:44px;padding:.35rem .8rem;border:1px solid currentColor;border-radius:.35rem}
+@media screen and (max-width:600px){
+ .vendor-list,.footer-info{grid-template-columns:1fr}
+ .vendor-list>div{padding:.5rem 0}
+ .vendor-signup{display:inline-flex;align-items:center;min-height:44px}
+ .contact-links{display:grid}
+ .contact-art{width:100%}
+}
+@media screen and (min-width:760px){.market-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.leaf-guide{display:flex;align-items:center;gap:1rem;background:#f3e7d0;padding:.65rem 1rem;border-radius:.4rem;margin:1rem 0}
+.leaf-guide svg{flex:none;width:clamp(62px,15vw,104px);height:auto}
+.leaf-guide p{margin:0}
+.footer-info{grid-template-columns:1fr;gap:1rem;padding-top:1rem}
+.footer-info section{padding:1rem;border-radius:.4rem;background:#f8edd8;color:#342920}
+.footer-info section+section{background:#e4ebe1;color:#253b2d}
+.toy-concepts{display:flex;flex-wrap:wrap;gap:.65rem 1.2rem;margin:1rem 0}
+
+.petition-count{display:inline-flex;align-items:center;gap:.65rem;background:#562638;color:#fff;padding:.45rem .9rem;border-radius:.4rem}
+.petition-count strong{font-size:2rem;line-height:1.1}
+.photo-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:start}
+.halloween-photos{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:600px){.photo-pair{grid-template-columns:1fr}}
+.fall-photo img{width:100%;height:auto;max-height:32rem;object-fit:cover;object-position:center 56%}
+
+.ladies-night-layout {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.ladies-night-layout > div { flex: 1; }
+.ladies-night-layout figure { flex: 0 0 13rem; margin: 0; }
+.ladies-night-layout img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 67%;
+  border-radius: .3rem;
+}
+@media (max-width: 600px) {
+  .ladies-night-layout { display: block; }
+  .ladies-night-layout figure { max-width: 13rem; }
+}
